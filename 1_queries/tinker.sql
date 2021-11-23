@@ -3,9 +3,10 @@
 -- select * from cohorts;
 
 
-SELECT name, email, phone, github, end_date
+SELECT *
 FROM students
-WHERE github is NULL and end_date < NOW();
+INNER JOIN cohorts on cohort_id = cohorts.id
+where students.start_date != cohorts.start_date
 
 
 
